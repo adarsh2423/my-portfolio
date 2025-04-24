@@ -1,4 +1,5 @@
 import { FiDownload, FiArrowRight } from 'react-icons/fi'
+import { MdPreview } from "react-icons/md";
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -32,7 +33,7 @@ export default function Hero() {
     }
   }
   
-  const techIcons = ['react', 'firebase', 'python', 'flask', 'node', 'mongodb']
+  const techIcons = ['react', 'java', 'python', 'flask', 'node', 'mysql']
   
   return (
     <section id="hero" className="min-h-screen flex items-center pt-16">
@@ -63,7 +64,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl"
             >
-              Full Stack Developer | MCA Graduate | AI Enthusiast
+              Full Stack Developer | MCA Graduate 
               <br />
               Crafting beautiful, functional user experiences with modern web technologies.
             </motion.p>
@@ -85,7 +86,14 @@ export default function Hero() {
               </Link>
               
               <a
-                href="/resume.pdf"
+                href="https://docs.google.com/document/d/1ZABcEPalMEE7Etrn80EN6Nc36OA7DA1_ZeCtHYdGkfQ/edit?usp=sharing"
+                className="btn-outline"
+              >
+                View Resume
+                <MdPreview className="ml-2" />
+              </a>
+              <a
+                href="/R Adarsh Resume.pdf"
                 download
                 className="btn-outline"
               >
@@ -100,15 +108,15 @@ export default function Hero() {
             className="relative hidden md:block"
           >
             <div className="w-full h-[450px] bg-gradient-to-tr from-primary-500/20 to-secondary-500/20 dark:from-primary-500/10 dark:to-secondary-500/10 rounded-2xl flex items-center justify-center">
-              <div className="relative w-64 h-64">
+              <div className="relative w-96 h-96">
                 {techIcons.map((icon, index) => (
                   <motion.div
                     key={icon}
-                    className="absolute w-12 h-12 rounded-lg bg-white dark:bg-gray-800 shadow-md flex items-center justify-center"
+                    className="absolute w-16 h-16 rounded-lg bg-white dark:bg-gray-800 shadow-md flex items-center justify-center"
                     style={{
-                      top: `${50 + 45 * Math.sin(index * (Math.PI / 3))}%`,
-                      left: `${50 + 45 * Math.cos(index * (Math.PI / 3))}%`,
-                      transform: 'translate(-50%, -50%)'
+                      top: `${45 + 45 * Math.sin(index * (Math.PI / 3))}%`,
+                      left: `${45 + 45 * Math.cos(index * (Math.PI / 3))}%`,
+                      transform: 'translate(-50%, 50%)'
                     }}
                     animate={{
                       y: [0, -10, 0],
@@ -122,18 +130,19 @@ export default function Hero() {
                     }}
                   >
                     <img 
-                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`} 
+                      src={icon==='node'? 'https://www.svgrepo.com/download/303360/nodejs-logo.svg':`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
                       alt={`${icon} logo`}
                       className="w-8 h-8"
                     />
                   </motion.div>
                 ))}
-                
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center border-4 border-white dark:border-gray-700">
-                    <span className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">RA</span>
+                 <span><img src="/Portfolio_photo1.png" className='absolute ml-24 mt-16 rounded-full inset-0 flex items-center justify-center w-52 h-64 scale-x-[-1]' /></span>
+                {/*<div className="absolute ml-10 mt-4 inset-0 flex items-center justify-center">
+                  <div className="w-60 h-60 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center border-4 border-white dark:border-gray-700">
+                    <span className="text-3xl font-bold bg-gradient-to-br from-primary-600 to-secondary-600 bg-clip-text text-transparent">RA</span>
+                   
                   </div>
-                </div>
+                </div>*/}
               </div>
             </div>
           </motion.div>
