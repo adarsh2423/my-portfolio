@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               <motion.a 
-                href="https://github.com" 
+                href="https://github.com/adarsh2423" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}

@@ -47,12 +47,12 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="space-y-6"
             >
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-300 text-justify">
                 I'm a passionate Full Stack Developer with a reasonable foundation in modern web technologies.
                 With a Master's in Computer Applications (MCA) from SRM University and a Bachelor's in Computer Applications (BCA) from SKASC,
                 I combine academic knowledge with practical skills to create innovative digital solutions.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-300 text-justify">
                 My approach blends technical expertise with creativity, allowing me to build efficient, 
                 scalable, and user-friendly applications. I'm constantly learning and adapting to new technologies 
                 to stay at the forefront of the ever-evolving tech landscape.

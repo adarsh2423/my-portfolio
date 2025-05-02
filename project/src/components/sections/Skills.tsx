@@ -4,7 +4,8 @@ import { useInView } from 'react-intersection-observer'
 interface Skill {
   name: string;
   icon: string;
-  level: number;
+  // level: number;
+  about : string;
 }
 
 interface SkillCategory {
@@ -22,34 +23,34 @@ export default function Skills() {
     {
       title: "Languages",
       skills: [
-        { name: "JavaScript", icon: "javascript", level: 90 },
-        { name: "Python", icon: "python", level: 85 },
-        { name: "Java", icon: "java", level: 75 },
-        { name: "C/C++", icon: "c", level: 70 },
-        { name: "HTML5", icon: "html5", level: 95 },
-        { name: "CSS3", icon: "css3", level: 90 }
+        { name: "JavaScript", icon: "javascript", about:"JavaScript is a programming language used to create interactive and dynamic features on websites, like forms, animations, and menus."},
+        { name: "Python", icon: "python", about:"A beginner-friendly language known for its simplicity and wide use in data science, web development, and automation." },
+        { name: "Java", icon: "java", about:"A powerful, object-oriented language used for building cross-platform apps, especially Android and enterprise software." },
+        { name: "C/C++", icon: "c", about:"Low-level languages used for system programming, game development, and high-performance applications." },
+        { name: "PHP", icon: "php", about:"A server-side scripting language mainly used for building dynamic websites and web apps." },
+        { name: "HTML5", icon: "html5", about:" The standard markup language used to structure content on the web." },
+        { name: "CSS3", icon: "css3", about:"A style sheet language used to design and visually style web pages." }
       ]
     },
     {
       title: "Frameworks & Libraries",
       skills: [
-        { name: "React", icon: "react", level: 85 },
-        { name: "Node.js", icon: "nodejs", level: 80 },
-        { name: "Flask", icon: "flask", level: 75 },
-        { name: "Express", icon: "express", level: 80 },
-        { name: "TailwindCSS", icon: "tailwindcss", level: 90 },
-        { name: "Bootstrap", icon: "bootstrap", level: 85 }
+        { name: "React", icon: "react", about:"A JavaScript library for building fast, interactive user interfaces, mainly for single-page apps." },
+        { name: "Node.js", icon: "nodejs", about:"A runtime that lets you run JavaScript on the server side to build scalable backend services." },
+        { name: "Flask", icon: "flask", about:"A lightweight Python web framework for building simple to moderate web applications." },
+        { name: "Express", icon: "express", about:"A minimal Node.js framework used to build web APIs and servers easily and quickly." },
+        { name: "TailwindCSS", icon: "tailwindcss", about:"A utility-first CSS framework for rapidly building custom user interfaces." },
+        { name: "Bootstrap", icon: "bootstrap", about:"A popular CSS framework for building responsive, mobile-first websites quickly." }
       ]
     },
     {
       title: "Databases & Tools",
       skills: [
-        { name: "MySQL", icon: "mysql", level: 80 },
-        { name: "MongoDB", icon: "mongodb", level: 75 },
-        { name: "Firebase", icon: "firebase", level: 85 },
-        { name: "Git", icon: "git", level: 90 },
-        { name: "Docker", icon: "docker", level: 70 },
-        { name: "Figma", icon: "figma", level: 75 }
+        { name: "MySQL", icon: "mysql", about:"An open-source relational database used to store and manage structured data." },
+        { name: "Firebase", icon: "firebase", about:"A platform by Google offering backend services like databases, authentication, and hosting." },
+        { name: "GitHub", icon: "github", about:"A cloud-based platform to host and manage code using Git, widely used for collaboration." },
+        { name: "Git", icon: "git", about:"A version control system that tracks changes in code and enables collaborative development." },
+        { name: "Figma", icon: "figma", about:"A browser-based design tool used for UI/UX design and prototyping." }
       ]
     }
   ]
@@ -81,7 +82,8 @@ export default function Skills() {
             >
               <h3 className="text-2xl font-semibold mb-8 text-center">{category.title}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.skills.map((skill, skillIndex) => (
+                {/* {category.skills.map((skill, skillIndex) => ( */}
+                {category.skills.map((skill) => (
                   <motion.div
                     key={skill.name}
                     whileHover={{ y: -5 }}
@@ -102,18 +104,17 @@ export default function Skills() {
                       <h4 className="text-lg font-semibold">{skill.name}</h4>
                     </div>
                     
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-2">
+                    {/* <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-2">
                       <motion.div 
                         className="bg-primary-600 dark:bg-primary-500 h-2.5 rounded-full"
                         initial={{ width: 0 }}
                         animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                         transition={{ duration: 1, delay: 0.4 + skillIndex * 0.1 }}
                       ></motion.div>
-                    </div>
+                    </div> */}
                     
-                    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
-                      <span>Beginner</span>
-                      <span>Advanced</span>
+                    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 text-justify text-[1rem] leading-normal">
+                      {skill.about}
                     </div>
                   </motion.div>
                 ))}
