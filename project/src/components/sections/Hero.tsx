@@ -3,12 +3,15 @@ import { MdPreview } from "react-icons/md";
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useTheme } from '../../context/ThemeContext'
 
 export default function Hero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
+
+  const { theme } = useTheme()
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -79,7 +82,7 @@ export default function Hero() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="btn-primary"
+                className="btn-primary cursor-pointer"
               >
                 View My Work
                 <FiArrowRight className="ml-2" />
@@ -112,7 +115,7 @@ export default function Hero() {
                 {techIcons.map((icon, index) => (
                   <motion.div
                     key={icon}
-                    className="absolute w-16 h-16 rounded-lg bg-white dark:bg-gray-800 shadow-md flex items-center justify-center"
+                    className="absolute w-16 h-16 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center"
                     style={{
                       top: `${45 + 45 * Math.sin(index * (Math.PI / 3))}%`,
                       left: `${45 + 45 * Math.cos(index * (Math.PI / 3))}%`,
@@ -132,11 +135,11 @@ export default function Hero() {
                     <img 
                       src={icon==='node'? 'https://www.svgrepo.com/download/303360/nodejs-logo.svg':`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
                       alt={`${icon} logo`}
-                      className="w-8 h-8"
+                      className="w-8 h-8 rounded-full"
                     />
                   </motion.div>
                 ))}
-                 <span><img src="/Portfolio_photo1.png" className='absolute ml-24 mt-16 rounded-full inset-0 flex items-center justify-center w-52 h-64 scale-x-[-1]' /></span>
+                 <span><img src={theme==="dark"?"Portfolio_photod.png":"Portfolio_photol.png"} className='absolute rounded-full ml-24 mt-24 inset-0 flex items-center justify-center w-56 h-56 scale-x-[-1]' /></span>
                 {/*<div className="absolute ml-10 mt-4 inset-0 flex items-center justify-center">
                   <div className="w-60 h-60 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center border-4 border-white dark:border-gray-700">
                     <span className="text-3xl font-bold bg-gradient-to-br from-primary-600 to-secondary-600 bg-clip-text text-transparent">RA</span>

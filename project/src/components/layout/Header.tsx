@@ -43,7 +43,7 @@ export default function Header() {
           className="flex items-center"
         >
           <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-            R Adarsh<span className="text-secondary-600 dark:text-secondary-400">.</span>
+            R Adarsh
           </span>
         </motion.div>
         

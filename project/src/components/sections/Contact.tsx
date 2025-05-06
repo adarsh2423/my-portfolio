@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin } from 'react-icons/fi'
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -21,20 +21,39 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // Form handling would go here (mock functionality for now)
     console.log('Form submitted:', formData)
-    alert('Thanks for your message! This is a demo form, so no message was actually sent.')
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
+    try {
+      const res = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.status === 'success') {
+        alert('Thanks for your message! I will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert('Oops! Something went wrong. Please try again.');
+        console.error(data.message);
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
   }
-  
+
   return (
     <section id="contact" className="section bg-gray-50 dark:bg-gray-800/50">
       <div className="container-custom">
@@ -69,7 +88,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
                     <a href="mailto:contact@example.com" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      contact@example.com
+                      adarshr1635@gmail.com
                     </a>
                   </div>
                 </div>
@@ -80,7 +99,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-400">+1 (123) 456-7890</p>
+                    <p className="text-gray-600 dark:text-gray-400">+91 9626979581 </p>
                   </div>
                 </div>
                 
@@ -100,7 +119,7 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold mb-6">Connect With Me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/adarsh2423" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -109,22 +128,13 @@ export default function Contact() {
                   <FiGithub className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/phoenixlife/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   aria-label="LinkedIn"
                 >
                   <FiLinkedin className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <FiTwitter className="w-5 h-5" />
                 </a>
               </div>
               

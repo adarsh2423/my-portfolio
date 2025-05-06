@@ -48,7 +48,7 @@ export default function Projects() {
       description: "Machine learning application that predicts stock prices based on historical data and various technical indicators.",
       image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["python", "machine-learning", "tensorflow"],
-      github: "https://github.com"
+      github: "https://colab.research.google.com/drive/1nSJOxUTjlyUsMg6-uXVgBvkMkx_sp3NB?usp=sharing"
     },
     {
       id: "e-learning-portal",
