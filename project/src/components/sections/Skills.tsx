@@ -96,6 +96,7 @@ export default function Skills() {
                           src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-original.svg`} 
                           alt={`${skill.name} logo`}
                           className="w-8 h-8"
+                          draggable="false"
                           onError={(e) => {
                             (e.target as HTMLImageElement).src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-plain.svg`;
                           }}

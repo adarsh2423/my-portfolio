@@ -89,8 +89,9 @@ export default function Hero() {
               </Link>
               
               <a
-                href="https://docs.google.com/document/d/1ZABcEPalMEE7Etrn80EN6Nc36OA7DA1_ZeCtHYdGkfQ/edit?usp=sharing"
+                href="https://drive.google.com/file/d/1JR5Ct04dQ96E6o45xpM7FlfYi5ZE1PUt/view?usp=sharing"
                 className="btn-outline"
+                target='_blank'
               >
                 View Resume
                 <MdPreview className="ml-2" />
@@ -136,16 +137,11 @@ export default function Hero() {
                       src={icon==='node'? 'https://www.svgrepo.com/download/303360/nodejs-logo.svg':`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
                       alt={`${icon} logo`}
                       className="w-8 h-8 rounded-full"
+                      draggable="false"
                     />
                   </motion.div>
                 ))}
-                 <span><img src={theme==="dark"?"Portfolio_photod.png":"Portfolio_photol.png"} className='absolute rounded-full ml-24 mt-24 inset-0 flex items-center justify-center w-56 h-56 scale-x-[-1]' /></span>
-                {/*<div className="absolute ml-10 mt-4 inset-0 flex items-center justify-center">
-                  <div className="w-60 h-60 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center border-4 border-white dark:border-gray-700">
-                    <span className="text-3xl font-bold bg-gradient-to-br from-primary-600 to-secondary-600 bg-clip-text text-transparent">RA</span>
-                   
-                  </div>
-                </div>*/}
+                 <span><img src={theme==="dark"?"Portfolio_photod.png":"Portfolio_photol.png"} className='absolute rounded-full ml-24 mt-24 inset-0 flex items-center justify-center w-56 h-56 scale-x-[-1]' draggable="false" /></span>
               </div>
             </div>
           </motion.div>

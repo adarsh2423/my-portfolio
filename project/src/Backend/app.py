@@ -21,7 +21,6 @@ def contact():
     subject = data.get('subject')
     message = data.get('message')
 
-    print(EMAIL_USER,",",EMAIL_PASSWORD)
     try:
         email_msg = EmailMessage()
         email_msg['Subject'] = subject

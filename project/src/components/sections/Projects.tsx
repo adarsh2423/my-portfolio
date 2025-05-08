@@ -29,6 +29,7 @@ export default function Projects() {
     { id: "react", name: "React" },
     { id: "python", name: "Python" },
     { id: "php", name: "PHP" },
+    { id: "javascript", name: "JavaScript" },
     { id: "machine-learning", name: "Machine Learning" }
   ]
   
@@ -48,7 +49,7 @@ export default function Projects() {
       description: "Machine learning application that predicts stock prices based on historical data and various technical indicators.",
       image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["python", "machine-learning", "tensorflow"],
-      github: "https://colab.research.google.com/drive/1nSJOxUTjlyUsMg6-uXVgBvkMkx_sp3NB?usp=sharing"
+      demo: "https://colab.research.google.com/drive/1nSJOxUTjlyUsMg6-uXVgBvkMkx_sp3NB?usp=sharing"
     },
     {
       id: "e-learning-portal",
@@ -65,6 +66,15 @@ export default function Projects() {
       description: "Responsive portfolio website built with modern web technologies to showcase skills and projects.",
       image: "https://images.pexels.com/photos/196646/pexels-photo-196646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["react", "tailwindcss", "typescript"],
+      github: "https://github.com",
+      demo: "https://example.com"
+    },
+    {
+      id: "simon-game",
+      title: "Simons Game",
+      description: "A memory game where players must repeat a sequence of colors and sounds.",
+      image: "https://images.pexels.com/photos/7117502/pexels-photo-7117502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      tags: ["html", "css", "javascript"],
       github: "https://github.com",
       demo: "https://example.com"
     }

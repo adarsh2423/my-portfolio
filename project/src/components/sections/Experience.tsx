@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiAward, FiCalendar, FiShield, FiMonitor } from 'react-icons/fi'
+import { FiAward, FiCalendar } from 'react-icons/fi'
 
 interface Certification {
   id: string;
   title: string;
   issuer: string;
   date: string;
-  icon: React.ReactNode;
+  certificate?: string;
 }
 
 interface Internship {
@@ -16,6 +16,7 @@ interface Internship {
   company: string;
   duration: string;
   description: string[];
+  certificate: string;
 }
 
 export default function Experience() {
@@ -35,52 +36,60 @@ export default function Experience() {
         "Implementing user authentication and authorization",
         "Creating interactive course materials and quizzes",
         "Optimizing application performance and user experience"
-      ]
+      ],
+      certificate:"https://drive.google.com/file/d/1FE8PgtpjdJrBHGIXZ9ErJpxI_4_NA7uq/view?usp=sharing"
     }
   ]
   
   const certifications: Certification[] = [
     {
       id: "google-android",
-      title: "Google Android Development",
+      title: "Google Android Development (AICTE)",
       issuer: "Google",
       date: "2023",
-      icon: <FiMonitor />
+      certificate: "https://drive.google.com/file/d/1W0JpK27Kx2NVoRh9N_CSmrBnrUq6uTbD/view?usp=sharing",
     },
     {
       id: "palo-alto",
       title: "Cyber Security",
-      issuer: "Palo Alto Networks",
-      date: "2022",
-      icon: <FiShield />
+      issuer: "Palo Alto Networks (AICTE)",
+      date: "2023",
+      certificate: "https://drive.google.com/file/d/1r-ojvs9cC-7YpC_m44tnhorzqZVJUKl5/view?usp=sharing",
     },
     {
-      id: "ibm-data-science",
-      title: "Data Science Professional",
+      id: "google-AI",
+      title: "Artificial Intelligence",
+      issuer: "Google (AICTE)",
+      date: "2023",
+      certificate: "https://drive.google.com/file/d/1tj1UgrfXJMRA5eSee5lQ2Uv08AAiElp5/view?usp=sharing",
+    },
+    {
+      id: "courseEra-AI",
+      title: "Ethics of Artificial Intelligence",
+      issuer: "CourseEra",
+      date: "2024",
+      certificate: "https://drive.google.com/file/d/1-7LMC2qwfKiwvQBbImdRD5nCOzVp9xEa/view?usp=sharing",
+    },
+    {
+      id: "IBM-Cloud",
+      title: "Introduction to Cloud Computing",
       issuer: "IBM",
-      date: "2022",
-      icon: <FiAward />
-    },
-    {
-      id: "oracle-java",
-      title: "Java Programming",
-      issuer: "Oracle",
       date: "2021",
-      icon: <FiAward />
+      certificate: "https://drive.google.com/file/d/1fGigkwvlvbSKIIigJJYz0MfaC7GM7HMZ/view?usp=sharing",
     },
     {
-      id: "nptel-python",
-      title: "Python Programming",
+      id: "nptel-softSkills",
+      title: "Soft Skills",
       issuer: "NPTEL",
       date: "2021",
-      icon: <FiAward />
+      certificate: "https://drive.google.com/file/d/1hB4AuLocLwhS1iWer7wY2-K3fH-rMErp/view?usp=sharing",
     },
     {
       id: "udemy-web-dev",
       title: "Web Development Bootcamp",
       issuer: "Udemy",
       date: "2020",
-      icon: <FiAward />
+      certificate: "https://drive.google.com/file/d/1IOkFo1sKefsATYyiUFFHn4v4GEVe76Y7/view?usp=sharing",
     }
   ]
   
@@ -108,6 +117,7 @@ export default function Experience() {
             
             <div className="space-y-8">
               {internships.map((internship, index) => (
+                <a href= {internship.certificate} target="_blank" >
                 <motion.div
                   key={internship.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -131,6 +141,7 @@ export default function Experience() {
                     ))}
                   </ul>
                 </motion.div>
+                </a>
               ))}
             </div>
           </motion.div>
@@ -142,28 +153,30 @@ export default function Experience() {
           >
             <h3 className="text-2xl font-semibold mb-8">Certifications</h3>
             
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-3 gap-2">
               {certifications.map((cert, index) => (
+                <a href={cert.certificate} target="_blank" rel="noopener noreferrer" className="flex-shrink-0" >
                 <motion.div
                   key={cert.id}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="card p-5 flex items-start space-x-4 hover:shadow-md"
+                  className="card p-5 flex items-start space-x-4 hover:shadow-md w-auto lg:aspect-square"
                 >
                   <div className="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
-                    {cert.icon}
+                    <FiAward/>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-lg leading-tight mb-1">{cert.title}</h4>
+                    <h4 className="font-semibold text-sm leading-tight mb-1">{cert.title}</h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">{cert.issuer}</p>
                     <div className="flex items-center text-xs text-gray-500 dark:text-gray-500">
                       <FiCalendar className="mr-1 h-3 w-3" /> {cert.date}
                     </div>
                   </div>
                 </motion.div>
+                </a>
               ))}
             </div>
           </motion.div>
