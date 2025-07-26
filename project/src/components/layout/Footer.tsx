@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  
+
   return (
     <footer className="bg-gray-50 dark:bg-gray-800 py-12">
       <div className="container-custom">
@@ -33,14 +33,15 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/phoenixlife/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                whileHover={{ y: -3 }}
+                whileHover={{ y: 3 }}
                 className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin className="w-6 h-6" />
               </motion.a>
               <motion.a 
-                href="mailto:adarshr1635@gmail.com" 
+                href='https://mail.google.com/mail/?view=cm&fs=1&to=adarshr1635@gmail.com&su=Subject&body=Message'
+                target="_blank"
                 whileHover={{ y: -3 }}
                 className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
