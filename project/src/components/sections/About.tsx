@@ -117,12 +117,12 @@ export default function About() {
             
             <div className="space-y-12">
               <div className="relative flex justify-between items-center">
-                <div className="w-5/12 pr-8 text-right">
+                <div className="w-5/12 text-right">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                     <span className="text-sm text-gray-500 dark:text-gray-400">2023 - 2025</span>
-                    <h4 className="text-xl font-semibold mb-2">Master of Computer Applications</h4>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">SRM University</p>
-                    <p className="text-gray-600 dark:text-gray-400">Specialized in Full Stack Development and AI</p>
+                    <h4 className="text-xs md:text-xl font-semibold mb-2 text-center">Master of Computer Applications</h4>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-2 text-center">SRM University</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-xs md:text-xl">Specialized in Full Stack Development and AI</p>
                   </div>
                 </div>
                 
@@ -130,22 +130,22 @@ export default function About() {
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 
-                <div className="w-5/12 pl-8"></div>
+                <div className="w-5/12"></div>
               </div>
               
               <div className="relative flex justify-between items-center">
-                <div className="w-5/12 pr-8"></div>
+                <div className="w-5/12"></div>
                 
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary-600 dark:bg-primary-500 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
                 
-                <div className="w-5/12 pl-8">
+                <div className="w-5/12">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                     <span className="text-sm text-gray-500 dark:text-gray-400">2020 - 2023</span>
-                    <h4 className="text-xl font-semibold mb-2">Bachelor of Computer Applications</h4>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">SKASC</p>
-                    <p className="text-gray-600 dark:text-gray-400">Foundation in programming and software development</p>
+                    <h4 className="text-xs md:text-xl font-semibold mb-2 text-center">Bachelor of Computer Applications</h4>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-2 text-center">SKASC</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-xs md:text-lg">Foundation in programming and software development</p>
                   </div>
                 </div>
               </div>

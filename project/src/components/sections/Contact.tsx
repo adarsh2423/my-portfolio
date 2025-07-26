@@ -25,7 +25,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="flex gap-20 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-20 items-center justify-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
