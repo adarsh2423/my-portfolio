@@ -30,6 +30,7 @@ export default function Projects() {
     { id: "python", name: "Python" },
     { id: "php", name: "PHP" },
     { id: "javascript", name: "JavaScript" },
+    {id: "typescript", name: "TypeScript"},
     { id: "machine-learning", name: "Machine Learning" }
   ]
   
@@ -40,8 +41,6 @@ export default function Projects() {
       description: "A complete e-commerce solution for purchasing books online with shopping cart, payment integration, and admin dashboard.",
       image: "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["php", "mysql", "html", "css"],
-      github: "https://github.com",
-      demo: "https://example.com"
     },
     {
       id: "stock-price-prediction",
@@ -56,9 +55,9 @@ export default function Projects() {
       title: "E-learning Portal for CICT",
       description: "Comprehensive e-learning platform with course management, quizzes, and analytics for students and instructors.",
       image: "https://images.pexels.com/photos/5940721/pexels-photo-5940721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      tags: ["react", "firebase", "flask"],
-      github: "https://github.com",
-      demo: "https://example.com"
+      tags: ["react", "firebase", "typescript", "javascript"],
+      github: "https://github.com/CICT-Chennai/elearningportal",
+      demo: "http://onlinecourse.cict.in"
     },
     {
       id: "personal-portfolio",
@@ -66,7 +65,7 @@ export default function Projects() {
       description: "Responsive portfolio website built with modern web technologies to showcase skills and projects.",
       image: "https://images.pexels.com/photos/196646/pexels-photo-196646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["react", "tailwindcss", "typescript"],
-      github: "https://github.com",
+      github: "https://github.com/adarsh2423/my-portfolio",
       demo: "https://example.com"
     },
     {
@@ -75,7 +74,16 @@ export default function Projects() {
       description: "A memory game where players must repeat a sequence of colors and sounds.",
       image: "https://images.pexels.com/photos/7117502/pexels-photo-7117502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       tags: ["html", "css", "javascript"],
-      github: "https://github.com",
+      github: "https://github.com/adarsh2423/Simons_Game",
+      demo: "https://example.com"
+    },
+    {
+      id: "Rms",
+      title: "RMS Mens PG",
+      description: "A single page website with seperate admin functionalities to manage rooms and beds",
+      image: "https://images.pexels.com/photos/7117502/pexels-photo-7117502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      tags: ["html", "css", "typescript"],
+      github: "https://github.com/adarsh2423/RMS-Residency",
       demo: "https://example.com"
     }
   ]

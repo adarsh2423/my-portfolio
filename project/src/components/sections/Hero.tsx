@@ -36,7 +36,7 @@ export default function Hero() {
     }
   }
   
-  const techIcons = ['react', 'java', 'python', 'flask', 'node', 'mysql']
+  const techIcons = ['react', 'java', 'python', 'flask', 'node', 'mysql', 'firebase']
   
   return (
     <section id="hero" className="min-h-screen flex items-center pt-16">
@@ -118,8 +118,8 @@ export default function Hero() {
                     key={icon}
                     className="absolute w-16 h-16 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center"
                     style={{
-                      top: `${45 + 45 * Math.sin(index * (Math.PI / 3))}%`,
-                      left: `${45 + 45 * Math.cos(index * (Math.PI / 3))}%`,
+                      top: `${45 + 45 * Math.sin(index * (Math.PI / 3.5))}%`,
+                      left: `${45 + 42 * Math.cos(index * (Math.PI / 3.5))}%`,
                       transform: 'translate(-50%, 50%)'
                     }}
                     animate={{
