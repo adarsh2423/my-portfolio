@@ -66,7 +66,7 @@ export default function Projects() {
       image: "https://images.pexels.com/photos/196646/pexels-photo-196646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       tags: ["react", "tailwindcss", "typescript"],
       github: "https://github.com/adarsh2423/my-portfolio",
-      demo: "https://example.com"
+      demo: "https://adarsh-portfolio1635.vercel.app/"
     },
     {
       id: "simon-game",
@@ -81,10 +81,10 @@ export default function Projects() {
       id: "Rms",
       title: "RMS Mens PG",
       description: "A single page website with seperate admin functionalities to manage rooms and beds",
-      image: "https://images.pexels.com/photos/7117502/pexels-photo-7117502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      image: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
       tags: ["html", "css", "typescript"],
       github: "https://github.com/adarsh2423/RMS-Residency",
-      demo: "https://example.com"
+      demo: "https://rmsmenspg.vercel.app/"
     }
   ]
   
